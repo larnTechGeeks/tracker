@@ -8,7 +8,7 @@ django-extensions==3.2.3
 djangorestframework==3.15.2
 docopt==0.6.2
 idna==3.10
-packaging==24.2nit
+Js2Py==0.74
 pipwin==0.5.2
 psycopg2-binary
 pyjsparser==2.7.1
