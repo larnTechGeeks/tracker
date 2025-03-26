@@ -7,11 +7,10 @@ from django.utils import timezone
 from .models import DailyLog, DutyStatus, LogSheet
 
 def calculate_route(pickup, dropoff):
-    # api_key = "sk.eyJ1Ijoic2ltb24td2pyIiwiYSI6ImNtOGxta3BybjE3MWgycXNlb2xrendnaXYifQ.WIDwmQfquYKcdM2gdgqTGw"
-    API_KEY=os.getenv("MAP_BOX_API_KEY")
+    api_key = "sk.eyJ1Ijoic2ltb24td2pyIiwiYSI6ImNtOGxta3BybjE3MWgycXNlb2xrendnaXYifQ.WIDwmQfquYKcdM2gdgqTGw"
     pickup_coords = geocode_city(pickup)
     dropoff_coords = geocode_city(dropoff)
-    url = f"https://api.mapbox.com/directions/v5/mapbox/driving/{pickup_coords};{dropoff_coords}?access_token={API_KEY}&geometries=geojson"
+    url = f"https://api.mapbox.com/directions/v5/mapbox/driving/{pickup_coords};{dropoff_coords}?access_token={api_key}&geometries=geojson"
     print("Making the map request")
     response = requests.get(url, verify=False)
     if response.status_code == 200:
